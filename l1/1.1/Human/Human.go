@@ -3,8 +3,8 @@ package human
 type Human struct {
 	Name string
 	Age  int
-	//true is male
-	//false is female
+	//True is male
+	//False is female
 	Sex bool
 }
 
