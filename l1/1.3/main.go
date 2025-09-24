@@ -3,12 +3,19 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"os"
+	"strconv"
 	"time"
 )
 
 func main() {
+	workersCount, err := strconv.Atoi(os.Args[1])
+	if err != nil {
+		fmt.Printf("Ошибка: аргумент '%s' не является числом\n", os.Args[1])
+		os.Exit(1)
+	}
 	ch := make(chan int)
-	createPool(ch, 6)
+	createPool(ch, workersCount)
 	write(ch)
 }
 
