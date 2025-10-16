@@ -10,15 +10,16 @@ func main() {
 }
 
 func intersect(set1 []int, set2 []int) []int {
-
 	res := []int{}
+	m := make(map[int]struct{})
 
 	for _, num1 := range set1 {
-		for _, num2 := range set2 {
-			if num1 == num2 {
-				res = append(res, num1)
-				break
-			}
+		m[num1] = struct{}{}
+	}
+
+	for _, num2 := range set2 {
+		if _, ok := m[num2]; ok {
+			res = append(res, num2)
 		}
 	}
 
