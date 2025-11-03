@@ -7,6 +7,6 @@ type Auth interface {
 type AuthService struct {
 }
 
-func (AuthService) SignIn(a Auth, login string, password string) (bool, error) {
+func (*AuthService) SignIn(a Auth, login string, password string) (bool, error) {
 	return a.SignIn(login, password)
 }
