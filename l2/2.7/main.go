@@ -56,6 +56,7 @@ func asChan(vs ...int) <-chan int {
 			c <- v
 			time.Sleep(time.Duration(rand.Intn(1000)) * time.Millisecond)
 		}
+		close(c)
 	}()
 	return c
 }
