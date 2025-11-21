@@ -1,4 +1,4 @@
-// Package currtime  prints the exact current time.
+// Package currtime prints the exact current time.
 package currtime
 
 import (
